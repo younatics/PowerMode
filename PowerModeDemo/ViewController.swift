@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var demoTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        demoTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func textDidChange(_ sender: UITextField) {
+        
+    }
 
 }
+
 
