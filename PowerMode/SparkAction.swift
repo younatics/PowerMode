@@ -8,15 +8,16 @@
 
 import UIKit
 
-class SparkAction: NSObject {
-    static let shared = SparkAction()
+public class SparkAction: NSObject {
+    public static let shared = SparkAction()
+    
     let MaxParticleCount = 100
     
     var timer: Timer?
     var particleDictionary = NSMutableDictionary()
     var index = 0
     
-    func at(position: CGPoint, with color: UIColor, in view: UIView) {
+    public func at(position: CGPoint, with color: UIColor, in view: UIView) {
         let number = 5 + Int(arc4random_uniform(5))
         
         for _ in 0..<number {
@@ -25,14 +26,17 @@ class SparkAction: NSObject {
             self.index = (self.index + 1) % MaxParticleCount
             self.particleDictionary.removeObject(forKey: self.index)
             self.particleDictionary.setObject(particle, forKey: self.index as NSCopying)
+
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
             
+
         }
     }
     
     @objc func update() {
         self.particleDictionary.enumerateKeysAndObjects { (key, particle, stop) in
             guard let _key = key as? Int, let _particle = particle as? ParticleView else { return }
-            
             
             if _particle.alpha <= 0.1 {
                 _particle.removeFromSuperview()
