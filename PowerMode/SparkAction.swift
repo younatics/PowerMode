@@ -12,7 +12,6 @@ class SparkAction: NSObject {
     static let shared = SparkAction()
     let MaxParticleCount = 100
     
-    var enableAction: Bool = false
     var timer: Timer?
     var particleDictionary = NSMutableDictionary()
     var index = 0
@@ -30,7 +29,7 @@ class SparkAction: NSObject {
         }
     }
     
-    func update() {
+    @objc func update() {
         self.particleDictionary.enumerateKeysAndObjects { (key, particle, stop) in
             guard let _key = key as? Int, let _particle = particle as? ParticleView else { return }
             
@@ -46,6 +45,16 @@ class SparkAction: NSObject {
             guard let velocity = _particle.velocity else { return }
             _particle.velocity = CGPoint(x: velocity.x, y: velocity.y + 0.175)
             _particle.position = CGPoint(x: velocity.x + velocity.x, y: velocity.y + velocity.y)
+        }
+    }
+    
+    func enableAction(isEnabled: Bool) {
+        if isEnabled {
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+            
+        } else {
+            self.timer?.invalidate()
         }
     }
 }
