@@ -39,28 +39,6 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     
-
-    @objc func textDidChange(_ sender: UITextField) {
-//        NSUInteger count = 0;
-//        NSInteger location = textView.selectedRange.location;
-//        NSRect rect = *[textView.layoutManager rectArrayForCharacterRange:NSMakeRange(location, 0)
-//            withinSelectedCharacterRange:NSMakeRange(location, 0)
-//            inTextContainer:textView.textContainer
-//            rectCount:&count];
-//        CGPoint position = rect.origin;
-//
-//        // Get the color under the cursor
-//        location = MAX(location - 1, 0);
-//        NSRange range = NSMakeRange(location, 1);
-//        NSColor *color = [self.sourceCodeDocument.textStorage colorAtCharacterIndex:location
-//            effectiveRange:&range
-//            context:nil];
-//        if (!color) {
-//            color = [NSColor whiteColor];
-//        }
-
-    }
-
 }
 
 
