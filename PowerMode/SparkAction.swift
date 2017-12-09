@@ -25,7 +25,6 @@ public class SparkAction: NSObject {
         
         for _ in 0..<number {
             let randomColor = colors[Int(arc4random_uniform(UInt32(colors.count)))]
-            print(randomColor)
             let particle = ParticleView(frame: CGRect(), position: position, color: randomColor)
             view.addSubview(particle)
             self.index = (self.index + 1) % MaxParticleCount
@@ -33,6 +32,8 @@ public class SparkAction: NSObject {
             self.particleDictionary.setObject(particle, forKey: self.index as NSCopying)
 
         }
+        
+        self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }

@@ -10,18 +10,19 @@ import UIKit
 
 public class PowerMode: NSObject {
     public class var colors: [UIColor] {
-        set {
-            let hexArray = colors.map { $0.toHexString() }
-            UserDefaults.standard.set(hexArray, forKey: "PowerModeColors")
-        }
-        
         get {
             if let hexArray = UserDefaults.standard.stringArray(forKey: "PowerModeColors") {
-            let colors = hexArray.map { UIColor.fromHex(hex: $0) }
+                let colors = hexArray.map { UIColor(hexString: $0) }
                 return colors
             } else {
                 return [UIColor.black]
             }
+        }
+
+        set(newValue) {
+            print(newValue)
+            let hexArray = newValue.map { $0.toHexString() }
+            UserDefaults.standard.set(hexArray, forKey: "PowerModeColors")
         }
     }
     
@@ -43,18 +44,27 @@ public class PowerMode: NSObject {
 }
 
 extension UIColor {
-    class func fromHex(hex:String) -> UIColor {
-        let scanner           = Scanner(string: hex)
-        scanner.scanLocation  = 0
-        var rgbValue: UInt64  = 0
-        scanner.scanHexInt64(&rgbValue)
+    convenience init(hexString:String) {
+        let hexString          = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let scanner            = Scanner(string: hexString)
         
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
+        if (hexString.hasPrefix("#")) {
+            scanner.scanLocation = 1
+        }
+        
+        var color:UInt32 = 0
+        scanner.scanHexInt32(&color)
+        
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+        
+        let red   = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue  = CGFloat(b) / 255.0
+        
+        self.init(red:red, green:green, blue:blue, alpha:1)
     }
     func toHexString() -> String {
         var r:CGFloat = 0
