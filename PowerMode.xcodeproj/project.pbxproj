@@ -13,6 +13,7 @@
 		1938DEC31FDACEEF00ACD507 /* PowerMode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB79E4E1FDA838B00F716AE /* PowerMode.framework */; };
 		19E3C1941FDC1A4200099A01 /* PowerModeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3C1931FDC1A4200099A01 /* PowerModeTextField.swift */; };
 		19E3C1981FDC1DD000099A01 /* PowerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3C1971FDC1DD000099A01 /* PowerMode.swift */; };
+		19E3C19A1FDC432800099A01 /* ShakeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3C1991FDC432800099A01 /* ShakeAction.swift */; };
 		CEB79E531FDA838C00F716AE /* PowerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB79E511FDA838B00F716AE /* PowerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB79E601FDA83E700F716AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB79E5F1FDA83E700F716AE /* AppDelegate.swift */; };
 		CEB79E621FDA83E700F716AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB79E611FDA83E700F716AE /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		1938DEC01FDAC8B900ACD507 /* SparkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkAction.swift; sourceTree = "<group>"; };
 		19E3C1931FDC1A4200099A01 /* PowerModeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerModeTextField.swift; sourceTree = "<group>"; };
 		19E3C1971FDC1DD000099A01 /* PowerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMode.swift; sourceTree = "<group>"; };
+		19E3C1991FDC432800099A01 /* ShakeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeAction.swift; sourceTree = "<group>"; };
 		CEB79E4E1FDA838B00F716AE /* PowerMode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PowerMode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB79E511FDA838B00F716AE /* PowerMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerMode.h; sourceTree = "<group>"; };
 		CEB79E521FDA838C00F716AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				19E3C1931FDC1A4200099A01 /* PowerModeTextField.swift */,
 				1938DEBC1FDAC1EC00ACD507 /* ParticleView.swift */,
 				1938DEC01FDAC8B900ACD507 /* SparkAction.swift */,
+				19E3C1991FDC432800099A01 /* ShakeAction.swift */,
 				CEB79E521FDA838C00F716AE /* Info.plist */,
 			);
 			path = PowerMode;
@@ -227,6 +230,7 @@
 			files = (
 				1938DEBF1FDAC1F800ACD507 /* PowerModeTextView.swift in Sources */,
 				1938DEC11FDAC8B900ACD507 /* SparkAction.swift in Sources */,
+				19E3C19A1FDC432800099A01 /* ShakeAction.swift in Sources */,
 				19E3C1941FDC1A4200099A01 /* PowerModeTextField.swift in Sources */,
 				19E3C1981FDC1DD000099A01 /* PowerMode.swift in Sources */,
 				1938DEBD1FDAC1EC00ACD507 /* ParticleView.swift in Sources */,
