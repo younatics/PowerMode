@@ -9,8 +9,13 @@
 import UIKit
 
 class ParticleView: UIView {
-    static let size:CGFloat = 3.0
-    var position: CGPoint?
+    static let size = CGSize(width: 3, height: 3)
+    var position: CGPoint? {
+        didSet {
+            guard let _position = position else { return }
+            self.frame = CGRect(origin: _position, size: ParticleView.size)
+        }
+    }
     var color: UIColor?
     var velocity: CGPoint?
     
@@ -20,7 +25,7 @@ class ParticleView: UIView {
     }
     
     convenience init(frame: CGRect, position: CGPoint, color: UIColor) {
-        let customizedSize = CGRect(x: position.x, y: position.y, width: ParticleView.size, height: ParticleView.size)
+        let customizedSize = CGRect(origin: position, size: ParticleView.size)
         self.init(frame: customizedSize)
         
         self.position = position
@@ -35,7 +40,7 @@ class ParticleView: UIView {
         let color = self.color?.withAlphaComponent(self.alpha + 0.3)
         color?.set()
         
-        let path = UIBezierPath(roundedRect: rect, cornerRadius: ParticleView.size)
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: 3)
         path.fill()
     }
     
