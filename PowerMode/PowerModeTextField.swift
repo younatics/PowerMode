@@ -26,7 +26,7 @@ public class PowerModeTextField: UITextField, UITextFieldDelegate {
         let convertedRect = convert(rect, to: superView)
         
         if PowerMode.isSparkActionEnabled {
-            SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: PowerMode.colors, in: superView)
+            SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: PowerMode.sparkColors, in: superView)
         }
         
         if PowerMode.isShakeActionEnabled {

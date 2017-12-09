@@ -9,7 +9,7 @@
 import UIKit
 
 public class PowerMode: NSObject {
-    public class var colors: [UIColor] {
+    public class var sparkColors: [UIColor] {
         get {
             if let hexArray = UserDefaults.standard.stringArray(forKey: "PowerModeColors") {
                 let colors = hexArray.map { UIColor(hexString: $0) }

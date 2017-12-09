@@ -17,8 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Spark values
-        // colors - random
-        PowerMode.colors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.brown]
+        PowerMode.sparkColors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.brown]
         PowerMode.isSparkActionEnabled = true
 
         // Shake values
