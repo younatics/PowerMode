@@ -16,6 +16,7 @@ class ParticleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     convenience init(frame: CGRect, position: CGPoint, color: UIColor) {

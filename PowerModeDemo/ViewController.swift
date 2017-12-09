@@ -26,12 +26,16 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let locaion = textView.selectedRange.location
+        let beginning = textView.beginningOfDocument
+        let start = textView.position(from: beginning, offset: range.location)
+        let end = textView.position(from: start!, offset: range.length)
         
-        SparkAction.shared.at(position: CGPoint(x: 10, y: 10), with: UIColor.red, in: textView)
+        let textRange = textView.textRange(from: start!, to: end!)
+        let rect = textView.firstRect(for: textRange!)
+        
+        SparkAction.shared.at(position: CGPoint(x: rect.origin.x, y: rect.origin.y), with: UIColor.red, in: textView)
         
         return true
-        
     }
     
     

@@ -27,11 +27,11 @@ public class SparkAction: NSObject {
             self.particleDictionary.removeObject(forKey: self.index)
             self.particleDictionary.setObject(particle, forKey: self.index as NSCopying)
 
-            self.timer?.invalidate()
-            self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
-            
-
         }
+        
+        self.timer?.invalidate()
+        self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        
     }
     
     @objc func update() {
@@ -46,9 +46,9 @@ public class SparkAction: NSObject {
             
             _particle.alpha *= 0.91
             
-            guard let velocity = _particle.velocity else { return }
+            guard let velocity = _particle.velocity, let position = _particle.position else { return }
             _particle.velocity = CGPoint(x: velocity.x, y: velocity.y + 0.175)
-            _particle.position = CGPoint(x: velocity.x + velocity.x, y: velocity.y + velocity.y)
+            _particle.position = CGPoint(x: position.x + velocity.x, y: position.y + velocity.y)
         }
     }
     
