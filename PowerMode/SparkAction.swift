@@ -11,11 +11,15 @@ import UIKit
 public class SparkAction: NSObject {
     public static let shared = SparkAction()
     
-    let MaxParticleCount = 100
+    let MaxParticleCount = 300
     
     var timer: Timer?
     var particleDictionary = NSMutableDictionary()
     var index = 0
+    
+    deinit {
+        print("deinit Called")
+    }
     
     public func at(position: CGPoint, with color: UIColor, in view: UIView) {
         let number = 5 + Int(arc4random_uniform(5))
@@ -41,6 +45,7 @@ public class SparkAction: NSObject {
             if _particle.alpha <= 0.1 {
                 _particle.removeFromSuperview()
                 self.particleDictionary.removeObject(forKey: _key)
+                
                 return
             }
             

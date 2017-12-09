@@ -84,9 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				CEB79E511FDA838B00F716AE /* PowerMode.h */,
+				1938DEBE1FDAC1F800ACD507 /* PowerMode.swift */,
 				1938DEBC1FDAC1EC00ACD507 /* ParticleView.swift */,
 				1938DEC01FDAC8B900ACD507 /* SparkAction.swift */,
-				1938DEBE1FDAC1F800ACD507 /* PowerMode.swift */,
 				CEB79E521FDA838C00F716AE /* Info.plist */,
 			);
 			path = PowerMode;
@@ -376,7 +376,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 575JZ3Y5NE;
+				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -399,7 +399,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 575JZ3Y5NE;
+				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -419,10 +419,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 575JZ3Y5NE;
+				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = PowerModeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.PowerModeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PowerModeAction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,10 +434,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 575JZ3Y5NE;
+				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = PowerModeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.PowerModeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PowerModeAction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

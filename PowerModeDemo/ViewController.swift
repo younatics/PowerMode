@@ -12,12 +12,9 @@ import PowerMode
 class ViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var demoTextView: UITextView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         demoTextView.delegate = self
-//        demoTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,14 +26,14 @@ class ViewController: UIViewController, UITextViewDelegate {
         let beginning = textView.beginningOfDocument
         let start = textView.position(from: beginning, offset: range.location)
         let end = textView.position(from: start!, offset: range.length)
-        
         let textRange = textView.textRange(from: start!, to: end!)
-        let rect = textView.firstRect(for: textRange!)
         
+        let rect = textView.firstRect(for: textRange!)
         SparkAction.shared.at(position: CGPoint(x: rect.origin.x, y: rect.origin.y), with: UIColor.red, in: textView)
         
         return true
     }
+    
     
     
 }

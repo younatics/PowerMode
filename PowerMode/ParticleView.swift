@@ -37,10 +37,10 @@ class ParticleView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let color = self.color?.withAlphaComponent(self.alpha + 0.3)
+        let color = self.color?.withAlphaComponent(self.alpha)
         color?.set()
         
-        let path = UIBezierPath(roundedRect: rect, cornerRadius: 3)
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height/2)
         path.fill()
     }
     

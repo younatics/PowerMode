@@ -92,7 +92,6 @@ NSInteger const MaxParticleCount = 100;
     }];
 }
 
-
 - (void)setEnableAction:(BOOL)enableAction
 {
     _enableAction = enableAction;
