@@ -16,32 +16,22 @@ class ParticleView: UIView {
             self.frame = CGRect(origin: _position, size: ParticleView.size)
         }
     }
-    var color: UIColor?
     var velocity: CGPoint?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
     convenience init(frame: CGRect, position: CGPoint, color: UIColor) {
         let customizedSize = CGRect(origin: position, size: ParticleView.size)
         self.init(frame: customizedSize)
         
+        self.backgroundColor = color
+        self.layer.cornerRadius = ParticleView.size.width/2
+        
         self.position = position
-        self.color = color
         self.velocity = CGPoint(x: -1.0 + (Double(arc4random_uniform(100)) / 100.0) * 2, y: -3.5 + (Double(arc4random_uniform(100)) / 100.0) * 2)
     
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        let color = self.color?.withAlphaComponent(self.alpha)
-        color?.set()
-        
-        let path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height/2)
-        path.fill()
     }
     
     required init?(coder aDecoder: NSCoder) {

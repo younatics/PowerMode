@@ -9,7 +9,7 @@
 import UIKit
 
 class PowerMode: NSObject {
-    class func animate(in textInput: UITextInput, with range:NSRange) -> CGRect? {
+    class func animate(in textInput: UITextInput, with range: NSRange) -> CGRect? {
         let beginning = textInput.beginningOfDocument
         let start = textInput.position(from: beginning, offset: range.location)
         

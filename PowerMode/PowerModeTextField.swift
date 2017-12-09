@@ -22,7 +22,7 @@ public class PowerModeTextField: UITextField, UITextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let rect = PowerMode.animate(in: textView, with: range), let superView = self.superview else { return true }
+        guard let rect = PowerMode.animate(in: textField, with: range), let superView = self.superview else { return true }
         let convertedRect = convert(rect, to: superView)
         
         SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: UIColor.red, in: superView)
