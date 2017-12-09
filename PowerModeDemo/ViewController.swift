@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         PowerMode.isSparkActionEnabled = true
 
         // Shake values
-        PowerMode.isShakeActionEnabled = true
+        PowerMode.isShakeActionEnabled = false
         PowerMode.shakeTranslationX = 0
         PowerMode.shakeTranslationY = 2
     }
