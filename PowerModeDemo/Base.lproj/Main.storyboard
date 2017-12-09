@@ -18,24 +18,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lCN-t5-dcX" customClass="PowerModeTextView" customModule="PowerMode">
-                                <rect key="frame" x="20" y="70" width="335" height="547"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PowerMode UITextField" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddl-DH-KFW">
+                                <rect key="frame" x="20" y="40" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PowerMode!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IVI-qu-Bkf" customClass="PowerModeTextField" customModule="PowerMode">
+                                <rect key="frame" x="20" y="71" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3oR-uR-Xc8"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PowerMode UITextView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xS-aO-lE7">
+                                <rect key="frame" x="20" y="121" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i3h-2F-xT9" customClass="PowerModeTextView" customModule="PowerMode">
+                                <rect key="frame" x="20" y="152" width="335" height="495"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">//  PowerMode
+//
+//  Created by YiSeungyoun on 2017. 12. 9..
+//  Copyright © 2017년 Seungyounyi. All rights reserved.
+//
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lCN-t5-dcX" secondAttribute="trailing" constant="20" id="eEk-ol-H3f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lCN-t5-dcX" secondAttribute="bottom" constant="50" id="fx9-oh-yaD"/>
-                            <constraint firstItem="lCN-t5-dcX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hrz-b5-Vvv"/>
-                            <constraint firstItem="lCN-t5-dcX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="tr5-Eb-4Z7"/>
+                            <constraint firstItem="i3h-2F-xT9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AIk-T1-PLG"/>
+                            <constraint firstItem="i3h-2F-xT9" firstAttribute="top" secondItem="8xS-aO-lE7" secondAttribute="bottom" constant="10" id="DUF-UW-rE9"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8xS-aO-lE7" secondAttribute="trailing" constant="20" symbolic="YES" id="Fcj-TP-chj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i3h-2F-xT9" secondAttribute="trailing" constant="20" id="NSZ-At-vYQ"/>
+                            <constraint firstItem="ddl-DH-KFW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ThN-g1-2oc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IVI-qu-Bkf" secondAttribute="trailing" constant="20" id="ZoO-c5-Af4"/>
+                            <constraint firstItem="IVI-qu-Bkf" firstAttribute="top" secondItem="ddl-DH-KFW" secondAttribute="bottom" constant="10" id="ara-6X-2uz"/>
+                            <constraint firstItem="8xS-aO-lE7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c5Z-kP-uPh"/>
+                            <constraint firstItem="8xS-aO-lE7" firstAttribute="top" secondItem="IVI-qu-Bkf" secondAttribute="bottom" constant="20" id="e6T-Tu-Qcr"/>
+                            <constraint firstItem="ddl-DH-KFW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jFE-MH-vsQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ddl-DH-KFW" secondAttribute="trailing" constant="20" symbolic="YES" id="kaw-NH-rE9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i3h-2F-xT9" secondAttribute="bottom" constant="20" id="lvj-2V-HOb"/>
+                            <constraint firstItem="IVI-qu-Bkf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uRA-j7-JyG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="demoTextView" destination="lCN-t5-dcX" id="lVt-fL-naX"/>
+                        <outlet property="powerModeTextField" destination="IVI-qu-Bkf" id="Ppw-3d-lEw"/>
+                        <outlet property="powerModeTextView" destination="i3h-2F-xT9" id="nMe-ZA-Wcd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
