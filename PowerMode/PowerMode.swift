@@ -51,6 +51,34 @@ public class PowerMode: NSObject {
             UserDefaults.standard.set(newValue, forKey: "PowerModeIsShakeActionEnabled")
         }
     }
+    
+    public class var shakeTranslationX: CGFloat {
+        get {
+            if let value = UserDefaults.standard.object(forKey: "PowerModeShakeTranslationX") as? CGFloat {
+                return value
+            } else {
+                return 0
+            }
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: "PowerModeShakeTranslationX")
+        }
+    }
+    
+    public class var shakeTranslationY: CGFloat {
+        get {
+            if let value = UserDefaults.standard.object(forKey: "PowerModeShakeTranslationY") as? CGFloat {
+                return value
+            } else {
+                return 2
+            }
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: "PowerModeShakeTranslationY")
+        }
+    }
+
+
 
     
     class func animate(in textInput: UITextInput, with range: NSRange) -> CGRect? {

@@ -23,6 +23,8 @@ class ViewController: UIViewController {
 
         // Shake values
         PowerMode.isShakeActionEnabled = true
+        PowerMode.shakeTranslationX = 0
+        PowerMode.shakeTranslationY = 2
     }
 
     override func didReceiveMemoryWarning() {
