@@ -8,18 +8,17 @@
 
 import UIKit
 
+/// Spark action in 
 public class SparkAction: NSObject {
+    /// Singleton
     public static let shared = SparkAction()
     
-    let MaxParticleCount = 300
+    /// Get MaxParticleCount
+    public let MaxParticleCount = 300
     
     var timer: Timer?
     var particleDictionary = NSMutableDictionary()
     var index = 0
-    
-    deinit {
-        print("deinit Called")
-    }
     
     public func at(position: CGPoint, with color: UIColor, in view: UIView) {
         let number = 5 + Int(arc4random_uniform(5))
@@ -46,6 +45,9 @@ public class SparkAction: NSObject {
                 _particle.removeFromSuperview()
                 self.particleDictionary.removeObject(forKey: _key)
                 
+                if self.particleDictionary.count == 0 {
+                    self.timer?.invalidate()
+                }
                 return
             }
             
@@ -54,16 +56,6 @@ public class SparkAction: NSObject {
             guard let velocity = _particle.velocity, let position = _particle.position else { return }
             _particle.velocity = CGPoint(x: velocity.x, y: velocity.y + 0.175)
             _particle.position = CGPoint(x: position.x + velocity.x, y: position.y + velocity.y)
-        }
-    }
-    
-    func enableAction(isEnabled: Bool) {
-        if isEnabled {
-            self.timer?.invalidate()
-            self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
-            
-        } else {
-            self.timer?.invalidate()
         }
     }
 }
