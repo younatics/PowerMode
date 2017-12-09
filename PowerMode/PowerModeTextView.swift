@@ -25,8 +25,14 @@ public class PowerModeTextView: UITextView, UITextViewDelegate {
         guard let rect = PowerMode.animate(in: textView, with: range), let superView = self.superview else { return true }
         let convertedRect = convert(rect, to: superView)
         
-        ShakeAction.shared.shake(view: self)
-        SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: PowerMode.colors, in: superView)
+        if PowerMode.isSparkActionEnabled {
+            SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: PowerMode.colors, in: superView)
+        }
+        
+        if PowerMode.isShakeActionEnabled {
+            ShakeAction.shared.shake(view: self)
+        }
+        
         return true
     }
 }

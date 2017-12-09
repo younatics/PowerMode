@@ -26,6 +26,33 @@ public class PowerMode: NSObject {
         }
     }
     
+    public class var isSparkActionEnabled: Bool {
+        get {
+            if let value = UserDefaults.standard.object(forKey: "PowerModeIsSparkActionEnabled") as? Bool {
+                return value
+            } else {
+                return true
+            }
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: "PowerModeIsSparkActionEnabled")
+        }
+    }
+    
+    public class var isShakeActionEnabled: Bool {
+        get {
+            if let value = UserDefaults.standard.object(forKey: "PowerModeIsShakeActionEnabled") as? Bool {
+                return value
+            } else {
+                return true
+            }
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: "PowerModeIsShakeActionEnabled")
+        }
+    }
+
+    
     class func animate(in textInput: UITextInput, with range: NSRange) -> CGRect? {
         let beginning = textInput.beginningOfDocument
         let start = textInput.position(from: beginning, offset: range.location)
