@@ -25,7 +25,7 @@ public class PowerModeTextField: UITextField, UITextFieldDelegate {
         guard let rect = PowerMode.animate(in: textField, with: range), let superView = self.superview else { return true }
         let convertedRect = convert(rect, to: superView)
         
-        SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: UIColor.red, in: superView)
+        SparkAction.shared.at(position: CGPoint(x: convertedRect.origin.x, y: convertedRect.origin.y), with: PowerMode.colors, in: superView)
 
         return true
     }

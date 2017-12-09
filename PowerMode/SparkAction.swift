@@ -20,19 +20,19 @@ public class SparkAction: NSObject {
     var particleDictionary = NSMutableDictionary()
     var index = 0
     
-    public func at(position: CGPoint, with color: UIColor, in view: UIView) {
+    public func at(position: CGPoint, with colors: [UIColor], in view: UIView) {
         let number = 5 + Int(arc4random_uniform(5))
         
         for _ in 0..<number {
-            let particle = ParticleView(frame: CGRect(), position: position, color: color)
+            let randomColor = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+            print(randomColor)
+            let particle = ParticleView(frame: CGRect(), position: position, color: randomColor)
             view.addSubview(particle)
             self.index = (self.index + 1) % MaxParticleCount
             self.particleDictionary.removeObject(forKey: self.index)
             self.particleDictionary.setObject(particle, forKey: self.index as NSCopying)
 
         }
-        
-        self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }
