@@ -10,10 +10,11 @@
 		1938DEBD1FDAC1EC00ACD507 /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938DEBC1FDAC1EC00ACD507 /* ParticleView.swift */; };
 		1938DEBF1FDAC1F800ACD507 /* PowerModeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938DEBE1FDAC1F800ACD507 /* PowerModeTextView.swift */; };
 		1938DEC11FDAC8B900ACD507 /* SparkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938DEC01FDAC8B900ACD507 /* SparkAction.swift */; };
-		1938DEC31FDACEEF00ACD507 /* PowerMode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB79E4E1FDA838B00F716AE /* PowerMode.framework */; };
 		19E3C1941FDC1A4200099A01 /* PowerModeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3C1931FDC1A4200099A01 /* PowerModeTextField.swift */; };
 		19E3C1981FDC1DD000099A01 /* PowerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3C1971FDC1DD000099A01 /* PowerMode.swift */; };
 		19E3C19A1FDC432800099A01 /* ShakeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3C1991FDC432800099A01 /* ShakeAction.swift */; };
+		19E3C1A01FDCD3F400099A01 /* PowerMode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB79E4E1FDA838B00F716AE /* PowerMode.framework */; };
+		19E3C1A11FDCD3F400099A01 /* PowerMode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEB79E4E1FDA838B00F716AE /* PowerMode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEB79E531FDA838C00F716AE /* PowerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB79E511FDA838B00F716AE /* PowerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB79E601FDA83E700F716AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB79E5F1FDA83E700F716AE /* AppDelegate.swift */; };
 		CEB79E621FDA83E700F716AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB79E611FDA83E700F716AE /* ViewController.swift */; };
@@ -21,6 +22,30 @@
 		CEB79E671FDA83E700F716AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB79E661FDA83E700F716AE /* Assets.xcassets */; };
 		CEB79E6A1FDA83E700F716AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB79E681FDA83E700F716AE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19E3C1A21FDCD3F400099A01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB79E451FDA838B00F716AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB79E4D1FDA838B00F716AE;
+			remoteInfo = PowerMode;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19E3C1A41FDCD3F400099A01 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				19E3C1A11FDCD3F400099A01 /* PowerMode.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1938DEBC1FDAC1EC00ACD507 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
@@ -53,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1938DEC31FDACEEF00ACD507 /* PowerMode.framework in Frameworks */,
+				19E3C1A01FDCD3F400099A01 /* PowerMode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,10 +178,12 @@
 				CEB79E591FDA83E700F716AE /* Sources */,
 				CEB79E5A1FDA83E700F716AE /* Frameworks */,
 				CEB79E5B1FDA83E700F716AE /* Resources */,
+				19E3C1A41FDCD3F400099A01 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				19E3C1A31FDCD3F400099A01 /* PBXTargetDependency */,
 			);
 			name = PowerModeDemo;
 			productName = PowerModeDemo;
@@ -247,6 +274,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19E3C1A31FDCD3F400099A01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB79E4D1FDA838B00F716AE /* PowerMode */;
+			targetProxy = 19E3C1A21FDCD3F400099A01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CEB79E631FDA83E700F716AE /* Main.storyboard */ = {
@@ -429,6 +464,7 @@
 		CEB79E6D1FDA83E700F716AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
@@ -444,6 +480,7 @@
 		CEB79E6E1FDA83E700F716AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
