@@ -20,6 +20,8 @@
 ## Usage
 Just inherit `PowerModeTextView` or `PowerModeTextField`. Done!
 
+Use `pmTextViewDelegate` or `pmTextFieldDelegate` for delegate.
+
 You can also add some properties listed below
 
 #### Spark action Property
