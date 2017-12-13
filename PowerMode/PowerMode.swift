@@ -29,7 +29,6 @@ public class PowerMode: NSObject {
         }
 
         set(newValue) {
-            print(newValue)
             let hexArray = newValue.map { $0.toHexString() }
             UserDefaults.standard.set(hexArray, forKey: PowerModeKeys.sparkColors)
         }
