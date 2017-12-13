@@ -9,9 +9,18 @@
 import UIKit
 
 public class PowerMode: NSObject {
+    
+    enum PowerModeKeys {
+        static let sparkColors = "PowerModeColors"
+        static let isSparkActionEnabled = "PowerModeIsSparkActionEnabled"
+        static let isShakeActionEnabled = "PowerModeIsShakeActionEnabled"
+        static let shakeTranslationX = "PowerModeShakeTranslationX"
+        static let shakeTranslationY = "PowerModeShakeTranslationY"
+    }
+    
     public class var sparkColors: [UIColor] {
         get {
-            if let hexArray = UserDefaults.standard.stringArray(forKey: "PowerModeColors") {
+            if let hexArray = UserDefaults.standard.stringArray(forKey: PowerModeKeys.sparkColors) {
                 let colors = hexArray.map { UIColor(hexString: $0) }
                 return colors
             } else {
@@ -22,59 +31,59 @@ public class PowerMode: NSObject {
         set(newValue) {
             print(newValue)
             let hexArray = newValue.map { $0.toHexString() }
-            UserDefaults.standard.set(hexArray, forKey: "PowerModeColors")
+            UserDefaults.standard.set(hexArray, forKey: PowerModeKeys.sparkColors)
         }
     }
     
     public class var isSparkActionEnabled: Bool {
         get {
-            if let value = UserDefaults.standard.object(forKey: "PowerModeIsSparkActionEnabled") as? Bool {
+            if let value = UserDefaults.standard.object(forKey: PowerModeKeys.isSparkActionEnabled) as? Bool {
                 return value
             } else {
                 return true
             }
         }
         set(newValue) {
-            UserDefaults.standard.set(newValue, forKey: "PowerModeIsSparkActionEnabled")
+            UserDefaults.standard.set(newValue, forKey: PowerModeKeys.isSparkActionEnabled)
         }
     }
     
     public class var isShakeActionEnabled: Bool {
         get {
-            if let value = UserDefaults.standard.object(forKey: "PowerModeIsShakeActionEnabled") as? Bool {
+            if let value = UserDefaults.standard.object(forKey: PowerModeKeys.isShakeActionEnabled) as? Bool {
                 return value
             } else {
                 return true
             }
         }
         set(newValue) {
-            UserDefaults.standard.set(newValue, forKey: "PowerModeIsShakeActionEnabled")
+            UserDefaults.standard.set(newValue, forKey: PowerModeKeys.isShakeActionEnabled)
         }
     }
     
     public class var shakeTranslationX: CGFloat {
         get {
-            if let value = UserDefaults.standard.object(forKey: "PowerModeShakeTranslationX") as? CGFloat {
+            if let value = UserDefaults.standard.object(forKey: PowerModeKeys.shakeTranslationX) as? CGFloat {
                 return value
             } else {
                 return 0
             }
         }
         set(newValue) {
-            UserDefaults.standard.set(newValue, forKey: "PowerModeShakeTranslationX")
+            UserDefaults.standard.set(newValue, forKey: PowerModeKeys.shakeTranslationX)
         }
     }
     
     public class var shakeTranslationY: CGFloat {
         get {
-            if let value = UserDefaults.standard.object(forKey: "PowerModeShakeTranslationY") as? CGFloat {
+            if let value = UserDefaults.standard.object(forKey: PowerModeKeys.shakeTranslationY) as? CGFloat {
                 return value
             } else {
                 return 2
             }
         }
         set(newValue) {
-            UserDefaults.standard.set(newValue, forKey: "PowerModeShakeTranslationY")
+            UserDefaults.standard.set(newValue, forKey: PowerModeKeys.shakeTranslationY)
         }
     }
 
