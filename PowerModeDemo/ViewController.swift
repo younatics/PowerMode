@@ -16,6 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Use this delegate to use it.
+        powerModeTextField.pmTextFieldDelegate = self
+        powerModeTextView.pmTextViewDelegate = self
+        
+        
         // Spark values
         PowerMode.sparkColors = [UIColor(hexString: "#9dc6d8"), UIColor(hexString: "#00b3ca"), UIColor(hexString: "#7dd0b6")]
 //        PowerMode.sparkColors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.brown]
@@ -33,7 +38,25 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        print("textViewDidChange")
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("textViewDidBeginEditing")
+    }
+}
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("textFieldDidEndEditing")
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("textFieldDidBeginEditing")
+    }
+}
 
 extension UIColor {
     convenience init(hexString:String) {

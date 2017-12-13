@@ -9,8 +9,15 @@
 import UIKit
 
 public class PowerModeTextView: UITextView, UITextViewDelegate {
+    @IBOutlet public weak var pmTextViewDelegate: UITextViewDelegate?
     
-    @IBOutlet weak var pmTextViewDelegate: UITextViewDelegate?
+    override public var delegate: UITextViewDelegate? {
+        didSet {
+            if delegate !== self {
+                fatalError("Please use pmTextViewDelegate for delegate")
+            }
+        }
+    }
     
     override public init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)

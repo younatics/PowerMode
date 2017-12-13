@@ -9,9 +9,16 @@
 import UIKit
 
 public class PowerModeTextField: UITextField, UITextFieldDelegate {
+    @IBOutlet public weak var pmTextFieldDelegate: UITextFieldDelegate?
     
-    @IBOutlet weak var pmTextFieldDelegate: UITextFieldDelegate?
-    
+    override public var delegate: UITextFieldDelegate? {
+        didSet {
+            if delegate !== self {
+                fatalError("Please use pmTextFieldDelegate for delegate")
+            }
+        }
+    }
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
