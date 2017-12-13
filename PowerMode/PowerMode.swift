@@ -85,23 +85,34 @@ public class PowerMode: NSObject {
             UserDefaults.standard.set(newValue, forKey: PowerModeKeys.shakeTranslationY)
         }
     }
-
-
-
     
     class func animate(in textInput: UITextInput, with range: NSRange) -> CGRect? {
         let beginning = textInput.beginningOfDocument
-        let start = textInput.position(from: beginning, offset: range.location)
+        var start = textInput.position(from: beginning, offset: range.location)
         
         guard let _start = start else { return nil }
-        let end = textInput.position(from: _start, offset: range.length)
-        
+        var end = textInput.position(from: _start, offset: range.length)
+
         guard let _end = end else { return nil }
-        let textRange = textInput.textRange(from: _start, to: _end)
-        
+        var textRange = textInput.textRange(from: _start, to: _end)
+
         guard let _textRange = textRange else { return nil }
-        let rect = textInput.firstRect(for: _textRange)
+        var rect = textInput.firstRect(for: _textRange)
         
+        if rect.origin.x.isInfinite || rect.origin.y.isInfinite {
+            start = textInput.position(from: beginning, offset: range.location - 1)
+            
+            guard let _start = start else { return nil }
+            end = textInput.position(from: _start, offset: range.length)
+            
+            guard let _end = end else { return nil }
+            textRange = textInput.textRange(from: _start, to: _end)
+            
+            guard let _textRange = textRange else { return nil }
+            rect = textInput.firstRect(for: _textRange)
+            
+            rect.origin.x += 10
+        }
         return rect
     }
 }
