@@ -4,8 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/PowerMode/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/PowerMode.svg?style=flat)](http://cocoapods.org/pods/PowerMode)
 [![Build Status](https://travis-ci.org/younatics/PowerMode.svg?branch=master)](https://travis-ci.org/younatics/PowerMode)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
-![iOS 9.0+](https://img.shields.io/badge/iOS-9.0%2B-blue.svg)
+[![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+![iOS 13.0+](https://img.shields.io/badge/iOS-13.0%2B-blue.svg)
 
 ![Shake_SparkAction_UITextView](https://github.com/younatics/PowerMode/blob/master/Images/Shake_SparkAction_UITextView.gif)
 
@@ -15,7 +15,7 @@
 | ![SparkAction_UITextView](https://github.com/younatics/PowerMode/blob/master/Images/SparkAction_UITextView.gif)  | ![ShakeAction_UITextView](https://github.com/younatics/PowerMode/blob/master/Images/ShakeAction_UITextView.gif)  |
 
 ## Requirements
-`PowerMode` is written in Swift 4. Compatible with iOS 9.0+
+`PowerMode` is written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
 
 ## Usage
 Just inherit `PowerModeTextView` or `PowerModeTextField`. Done!
@@ -40,6 +40,17 @@ You can also add some properties listed below
 
 
 ## Installation
+### Swift Package Manager
+In Xcode, choose **File ▸ Add Package Dependencies…** and enter:
+```
+https://github.com/younatics/PowerMode.git
+```
+Or add it to your `Package.swift`:
+```swift
+dependencies: [
+    .package(url: "https://github.com/younatics/PowerMode.git", from: "1.0.0")
+]
+```
 ### Cocoapods
 ```ruby
 pod 'PowerMode'

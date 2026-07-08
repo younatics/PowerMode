@@ -86,7 +86,7 @@ public class PowerMode: NSObject {
         }
     }
     
-    class func animate(in textInput: UITextInput, with range: NSRange) -> CGRect? {
+    @MainActor class func animate(in textInput: UITextInput, with range: NSRange) -> CGRect? {
         let beginning = textInput.beginningOfDocument
         var start = textInput.position(from: beginning, offset: range.location)
         
@@ -123,11 +123,11 @@ extension UIColor {
         let scanner            = Scanner(string: hexString)
         
         if (hexString.hasPrefix("#")) {
-            scanner.scanLocation = 1
+            scanner.currentIndex = hexString.index(after: hexString.startIndex)
         }
-        
-        var color:UInt32 = 0
-        scanner.scanHexInt32(&color)
+
+        var color: UInt64 = 0
+        scanner.scanHexInt64(&color)
         
         let mask = 0x000000FF
         let r = Int(color >> 16) & mask

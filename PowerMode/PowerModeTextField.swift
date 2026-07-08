@@ -67,7 +67,7 @@ public class PowerModeTextField: UITextField, UITextFieldDelegate {
     }
     
     @available(iOS 10.0, *)
-    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         pmTextFieldDelegate?.textFieldDidEndEditing?(textField, reason: reason)
     }
     

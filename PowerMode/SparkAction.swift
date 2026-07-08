@@ -9,7 +9,7 @@
 import UIKit
 
 /// Spark action in 
-public class SparkAction: NSObject {
+@MainActor public class SparkAction: NSObject {
     /// Singleton
     public static let shared = SparkAction()
     

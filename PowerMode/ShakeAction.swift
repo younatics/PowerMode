@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShakeAction: NSObject {
+@MainActor class ShakeAction: NSObject {
     public static let shared = ShakeAction()
 
     func shake(view: UIView) {

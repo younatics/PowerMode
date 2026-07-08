@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PowerMode'
-  s.version          = '0.9.4'
-  s.summary          = 'PowerMode in iOS!'
+  s.version          = '1.0.0'
+  s.summary          = 'PowerMode in iOS! (Swift 6)'
 
   s.description = <<-DESCRIPTION
   PowerMode in iOS! Use PowerMode!!
@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
     :tag => s.version.to_s }
 
   s.source_files     = 'PowerMode/*.swift'
-  s.ios.deployment_target = '9.0'
+  s.swift_version = '6.0'
+  s.ios.deployment_target = '13.0'
 
   s.frameworks = 'UIKit'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
