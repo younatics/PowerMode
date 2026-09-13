@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PowerMode'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'PowerMode in iOS! (Swift 6)'
 
   s.description = <<-DESCRIPTION
