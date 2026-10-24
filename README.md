@@ -1,7 +1,7 @@
 # 🎶 PowerMode in iOS!
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-brightgreen.svg?style=flat)](Package.swift)
 [![CocoaPods](https://img.shields.io/cocoapods/v/PowerMode.svg?style=flat)](https://cocoapods.org/pods/PowerMode)
-![iOS 13.0+](https://img.shields.io/badge/iOS-13.0%2B-blue.svg?style=flat)
+![iOS 15.0+](https://img.shields.io/badge/iOS-13.0%2B-blue.svg?style=flat)
 [![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
@@ -13,7 +13,7 @@
 | ![SparkAction_UITextView](https://github.com/younatics/PowerMode/blob/master/Images/SparkAction_UITextView.gif)  | ![ShakeAction_UITextView](https://github.com/younatics/PowerMode/blob/master/Images/ShakeAction_UITextView.gif)  |
 
 ## Requirements
-`PowerMode` requires Swift 6.0 and iOS 13.0+. It supports Swift Package Manager and CocoaPods.
+`PowerMode` requires Swift 6.0 and iOS 15.0+. It supports Swift Package Manager and CocoaPods.
 
 ## Usage
 Import `PowerMode`, then use `PowerModeTextView` or `PowerModeTextField`. Done!
